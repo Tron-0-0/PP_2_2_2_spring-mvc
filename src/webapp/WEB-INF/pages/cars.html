@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>table th, table td {padding: 5px;}</style>
+</head>
+<body>
+<div>
+    <h1>Cars</h1>
+    <table border="1">
+        <tr>
+            <th>Model</th>
+            <th>Serial Number</th>
+            <th>Year</th>
+        </tr>
+        <tr th:each="car : ${cars}">
+            <td th:utext="${car.getModel()}">Model</td>
+            <td th:utext="${car.getSerialNumber()}">Serial Number</td>
+            <td th:utext="${car.getYear()}">Year</td>
+        </tr>
+    </table>
+</body>
+</html>
